@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+    x:Class="Progress_Bar_Simulator.MainPage" BackgroundColor="#8F9E9E">
+    <!--x:Class="Progress_Bar_Simulator.MainPage" BackgroundColor="#3CDCD9">-->
+    <Grid Padding="0" Margin="0">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <Frame BackgroundColor="#2196F3" Padding="24" Margin="10" CornerRadius="12" Grid.Row="0" Grid.ColumnSpan="3">
+            <Label x:Name="LblLoadCount" Text="Loaded 0 Times" HorizontalTextAlignment="Center" TextColor="White" FontSize="20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Loaded " TextColor="White"/>
+                        <Span Text="0" TextColor="Gold"/>
+                        <Span Text=" Times" TextColor="White"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </Frame>
+        
+        <Button x:Name="MainButton" Text="Not Activated" Clicked="MainButton_Clicked" CornerRadius="5" BackgroundColor="#D43535" ScaleX="1" HorizontalOptions="Center" WidthRequest="250" Grid.Row="1" Grid.ColumnSpan="3"/>
+        <ProgressBar x:Name ="MainProgressBar" Grid.Row="2" Grid.ColumnSpan="3" ScaleY="5" ScaleX="0.45" ProgressColor="#FA5252" Margin="0,10"/>
+
+        <StackLayout x:Name="StlProgressBarColor" Grid.Row="3" Grid.ColumnSpan="3" VerticalOptions="End" Margin="10" Spacing="0">
+            
+            <Frame Margin="0,0,0,-5" Padding="0,0,0,10" BackgroundColor="#687575" CornerRadius="5">
+                <Label  Text="Progress Bar Colour" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            </Frame>
+            
+            <Frame CornerRadius="5" BackgroundColor="#788585" >
+                <StackLayout   Padding="0" Margin="0" Spacing="30">
+                    <Slider x:Name="SliRed" ValueChanged="SliRed_ValueChanged"  Value="250" ThumbColor="Red" MinimumTrackColor="Red" MaximumTrackColor="#C00000" Maximum="255"/>
+                    <Slider x:Name="SliGreen" ValueChanged="SliGreen_ValueChanged"  Value="82" ThumbColor="ForestGreen" MinimumTrackColor="ForestGreen" MaximumTrackColor="#00C000" Maximum="255"/>
+                    <Slider x:Name="SliBlue" ValueChanged="SliBlue_ValueChanged"  Value="82" ThumbColor="Blue" MinimumTrackColor="Blue" MaximumTrackColor="#0000C0" Maximum="255"/>
+                </StackLayout>
+            </Frame>
+            
+        </StackLayout>
+        
+        <StackLayout x:Name ="StlLoadMode" Grid.Row="4" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="10" Spacing="0">
+            
+            <Frame Margin="0,0,0,-5" Padding="0,0,0,10" BackgroundColor="#687575" CornerRadius="5">
+                <Label Text="Load Mode" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            </Frame>
+            
+            <Frame BackgroundColor="#788585" CornerRadius="5" Padding="10" Margin="0">
+                <Grid>
+                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <RadioButton x:Name="RadCubicIn" Grid.Column="0" Grid.Row="0" Text="CubicIn" HorizontalOptions="Start"/>
+                    <RadioButton x:Name="RadCubicOut" Grid.Column="1" Grid.Row="0" Text="CubicOut" HorizontalOptions="Start"/>
+                    <RadioButton x:Name="RadCubicInOut" Grid.Column="2" Grid.Row="0" Text="CubicInOut" IsChecked="True" HorizontalOptions="Start"/>
+
+                    <RadioButton x:Name="RadSinIn" Grid.Column="0" Grid.Row="1" Text="SinIn" HorizontalOptions="Start"/>
+                    <RadioButton x:Name="RadSinOut" Grid.Column="1" Grid.Row="1" Text="SinOut" HorizontalOptions="Start"/>
+                    <RadioButton x:Name="RadSinInOut" Grid.Column="2" Grid.Row="1" Text="SinInOut" HorizontalOptions="Start"/>
+
+                    <RadioButton x:Name="RadBounceIn" Grid.Column="0" Grid.Row="2" Text="Bounce In" HorizontalOptions="Start"/>
+                    <RadioButton x:Name="RadBounceOut" Grid.Column="1" Grid.Row="2" Text="BounceOut" HorizontalOptions="Start"/>
+
+                    <RadioButton x:Name="RadSpringIn" Grid.Column="0" Grid.Row="3" Text="SpringIn" HorizontalOptions="Start"/>
+                    <RadioButton x:Name="RadSpringOut" Grid.Column="1" Grid.Row="3" Text="SpringOut" HorizontalOptions="Start"/>
+
+                    <RadioButton x:Name="RadLinear" Grid.Column="0" Grid.Row="4" Text="Linear" HorizontalOptions="Start"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+        
+    </Grid>
+
+</ContentPage>
