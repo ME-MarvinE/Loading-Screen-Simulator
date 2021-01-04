@@ -34,9 +34,9 @@ namespace Progress_Bar_Simulator
             SliGreen.Value = 82;
             SliBlue.Value = 82;
         }
-        private void MainButton_Clicked(object sender, EventArgs e)
+        private async void MainButton_Clicked(object sender, EventArgs e)
         {
-            ActivateProgressBar();
+            await ActivateProgressBarAsync();
         }
         private void SliRed_ValueChanged(object sender, ValueChangedEventArgs e)
         {
@@ -50,7 +50,7 @@ namespace Progress_Bar_Simulator
         {
             MainProgressBar.ProgressColor = new Color(SliRed.Value / 255, SliGreen.Value / 255, SliBlue.Value / 255);
         }
-        private async void ActivateProgressBar()
+        private async Task ActivateProgressBarAsync()
         {
             uint ProgressLength = 3000;
             MainButtonActivated = !MainButtonActivated;
