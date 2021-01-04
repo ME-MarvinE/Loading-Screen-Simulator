@@ -7,11 +7,11 @@
     <Grid Padding="0" Margin="0">
         
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="60"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.2*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -30,14 +30,14 @@
                 </Label.FormattedText>
             </Label>
         </Frame>
-        
-        <Button x:Name="MainButton" Text="Not Activated" Clicked="MainButton_Clicked" CornerRadius="5" BackgroundColor="#D43535" ScaleX="1" HorizontalOptions="Center" WidthRequest="250" Grid.Row="1" Grid.ColumnSpan="3"/>
+
+        <Button x:Name="BtnLoadMainProgressBar" Text="Not Activated" Clicked="BtnLoadMainProgressBar_Clicked" CornerRadius="5" BackgroundColor="#D43535" ScaleX="1" HorizontalOptions="Center" WidthRequest="250" Grid.Row="1" Grid.ColumnSpan="3"/>
         <ProgressBar x:Name ="MainProgressBar" Grid.Row="2" Grid.ColumnSpan="3" ScaleY="5" ScaleX="0.45" ProgressColor="#FA5252" Margin="0,10"/>
 
         <StackLayout x:Name="StlProgressBarColor" Grid.Row="3" Grid.ColumnSpan="3" VerticalOptions="End" Margin="10" Spacing="0">
             
             <Frame Margin="0,0,0,-5" Padding="0,0,0,10" BackgroundColor="#687575" CornerRadius="5">
-                <Label  Text="Progress Bar Colour" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Label  Text="Progress Bar Colour" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="White"/>
             </Frame>
             
             <Frame CornerRadius="5" BackgroundColor="#788585" >
@@ -53,11 +53,11 @@
         <StackLayout x:Name ="StlLoadMode" Grid.Row="4" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="10" Spacing="0">
             
             <Frame Margin="0,0,0,-5" Padding="0,0,0,10" BackgroundColor="#687575" CornerRadius="5">
-                <Label Text="Load Mode" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                <Label Text="Load Mode" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="White"/>
             </Frame>
             
             <Frame BackgroundColor="#788585" CornerRadius="5" Padding="10" Margin="0">
-                <Grid>
+                <Grid x:Name="GrdLoadModeOptions">
                     
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -72,21 +72,21 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     
-                    <RadioButton x:Name="RadCubicIn" Grid.Column="0" Grid.Row="0" Text="CubicIn" HorizontalOptions="Start"/>
-                    <RadioButton x:Name="RadCubicOut" Grid.Column="1" Grid.Row="0" Text="CubicOut" HorizontalOptions="Start"/>
-                    <RadioButton x:Name="RadCubicInOut" Grid.Column="2" Grid.Row="0" Text="CubicInOut" IsChecked="True" HorizontalOptions="Start"/>
+                    <RadioButton Grid.Column="0" Grid.Row="0" Text="Cubic In"/>
+                    <RadioButton Grid.Column="1" Grid.Row="0" Text="Cubic Out"/>
+                    <RadioButton Grid.Column="2" Grid.Row="0" Text="Cubic In Out" IsChecked="True"/>
 
-                    <RadioButton x:Name="RadSinIn" Grid.Column="0" Grid.Row="1" Text="SinIn" HorizontalOptions="Start"/>
-                    <RadioButton x:Name="RadSinOut" Grid.Column="1" Grid.Row="1" Text="SinOut" HorizontalOptions="Start"/>
-                    <RadioButton x:Name="RadSinInOut" Grid.Column="2" Grid.Row="1" Text="SinInOut" HorizontalOptions="Start"/>
+                    <RadioButton Grid.Column="0" Grid.Row="1" Text="Sin In"/>
+                    <RadioButton Grid.Column="1" Grid.Row="1" Text="Sin Out"/>
+                    <RadioButton Grid.Column="2" Grid.Row="1" Text="Sin In Out"/>
 
-                    <RadioButton x:Name="RadBounceIn" Grid.Column="0" Grid.Row="2" Text="Bounce In" HorizontalOptions="Start"/>
-                    <RadioButton x:Name="RadBounceOut" Grid.Column="1" Grid.Row="2" Text="BounceOut" HorizontalOptions="Start"/>
+                    <RadioButton Grid.Column="0" Grid.Row="2" Text="Bounce In"/>
+                    <RadioButton Grid.Column="1" Grid.Row="2" Text="Bounce Out"/>
 
-                    <RadioButton x:Name="RadSpringIn" Grid.Column="0" Grid.Row="3" Text="SpringIn" HorizontalOptions="Start"/>
-                    <RadioButton x:Name="RadSpringOut" Grid.Column="1" Grid.Row="3" Text="SpringOut" HorizontalOptions="Start"/>
+                    <RadioButton Grid.Column="0" Grid.Row="3" Text="Spring In"/>
+                    <RadioButton Grid.Column="1" Grid.Row="3" Text="Spring Out"/>
 
-                    <RadioButton x:Name="RadLinear" Grid.Column="0" Grid.Row="4" Text="Linear" HorizontalOptions="Start"/>
+                    <RadioButton Grid.Column="0" Grid.Row="4" Text="Linear"/>
                 </Grid>
             </Frame>
         </StackLayout>
