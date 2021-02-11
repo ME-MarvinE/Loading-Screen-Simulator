@@ -34,7 +34,6 @@ namespace Progress_Bar_Simulator
             SliRed.Value = 250;
             SliGreen.Value = 82;
             SliBlue.Value = 82;
-
         }
 
         #region "Methods"
@@ -44,9 +43,8 @@ namespace Progress_Bar_Simulator
         private async Task AnimateMainProgressBarAsync()
         {
             uint ProgressBarAnimationLength = 3000;
-            Easing MainProgressBarEasing = Easing.CubicInOut;
-
-            Dictionary<String, Easing> EasingChoices = new Dictionary<string, Easing>()
+            Easing SelectedEasingMode = Easing.CubicInOut;
+            Dictionary<String, Easing> EasingModeOptions = new Dictionary<string, Easing>()
             {
                 {"Cubic In", Easing.CubicIn},
                 {"Cubic Out", Easing.CubicOut},
@@ -66,7 +64,7 @@ namespace Progress_Bar_Simulator
             {
                 try
                 {
-                    MainProgressBarEasing = EasingChoices[RadLoadOption.Text];
+                    SelectedEasingMode = EasingModeOptions[RadLoadOption.Text];
                 }
                 catch
                 {
@@ -74,7 +72,7 @@ namespace Progress_Bar_Simulator
                 }
             }
             //Start the MainProgressBar animation and update the load count after it's done.
-            await MainProgressBar.ProgressTo(1, ProgressBarAnimationLength, MainProgressBarEasing);
+            await MainProgressBar.ProgressTo(1, ProgressBarAnimationLength, SelectedEasingMode);
             await Task.Delay(250);
             MainProgressBar.Progress = 0;
             MainProgressBarLoadCount += 1;

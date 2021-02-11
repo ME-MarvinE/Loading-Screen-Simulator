@@ -24,7 +24,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Progress Bar Simulator</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.MEGames.Progress_Bar_Simulator</string>
+	<string>com.meapps.Progress_Bar_Simulator</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
