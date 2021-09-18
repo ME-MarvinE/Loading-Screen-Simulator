@@ -50,7 +50,7 @@
             
         </StackLayout>
         
-        <StackLayout x:Name ="StlLoadMode" Grid.Row="4" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="10" Spacing="0">
+        <StackLayout x:Name ="StlLoadMode" Grid.Row="4" Grid.ColumnSpan="3" VerticalOptions="End" HorizontalOptions="CenterAndExpand" Margin="10,0,10,10" Spacing="0">
             
             <Frame Margin="0,0,0,-5" Padding="0,0,0,10" BackgroundColor="#687575" CornerRadius="5">
                 <Label Text="Load Mode" FontSize="30" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="White"/>
@@ -72,21 +72,21 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     
-                    <RadioButton Grid.Column="0" Grid.Row="0" Text="Cubic In"/>
-                    <RadioButton Grid.Column="1" Grid.Row="0" Text="Cubic Out"/>
-                    <RadioButton Grid.Column="2" Grid.Row="0" Text="Cubic In Out" IsChecked="True"/>
+                    <RadioButton Grid.Column="0" Grid.Row="0" Content="Cubic In"/>
+                    <RadioButton Grid.Column="1" Grid.Row="0" Content="Cubic Out"/>
+                    <RadioButton Grid.Column="2" Grid.Row="0" Content="Cubic In Out" IsChecked="True"/>
 
-                    <RadioButton Grid.Column="0" Grid.Row="1" Text="Sin In"/>
-                    <RadioButton Grid.Column="1" Grid.Row="1" Text="Sin Out"/>
-                    <RadioButton Grid.Column="2" Grid.Row="1" Text="Sin In Out"/>
+                    <RadioButton Grid.Column="0" Grid.Row="1" Content="Sin In"/>
+                    <RadioButton Grid.Column="1" Grid.Row="1" Content="Sin Out"/>
+                    <RadioButton Grid.Column="2" Grid.Row="1" Content="Sin In Out"/>
 
-                    <RadioButton Grid.Column="0" Grid.Row="2" Text="Bounce In"/>
-                    <RadioButton Grid.Column="1" Grid.Row="2" Text="Bounce Out"/>
+                    <RadioButton Grid.Column="0" Grid.Row="2" Content="Bounce In"/>
+                    <RadioButton Grid.Column="1" Grid.Row="2" Content="Bounce Out"/>
 
-                    <RadioButton Grid.Column="0" Grid.Row="3" Text="Spring In"/>
-                    <RadioButton Grid.Column="1" Grid.Row="3" Text="Spring Out"/>
+                    <RadioButton Grid.Column="0" Grid.Row="3" Content="Spring In"/>
+                    <RadioButton Grid.Column="1" Grid.Row="3" Content="Spring Out"/>
 
-                    <RadioButton Grid.Column="0" Grid.Row="4" Text="Linear"/>
+                    <RadioButton Grid.Column="0" Grid.Row="4" Content="Linear"/>
                 </Grid>
             </Frame>
         </StackLayout>

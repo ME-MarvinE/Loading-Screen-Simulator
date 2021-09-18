@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -36,7 +34,7 @@ namespace Progress_Bar_Simulator
             SliBlue.Value = 82;
         }
 
-        #region "Methods"
+        #region Methods
         /// <summary>
         /// Animate the MainProgressBar based on the radiobutton selected.
         /// </summary>
@@ -64,11 +62,11 @@ namespace Progress_Bar_Simulator
             {
                 try
                 {
-                    SelectedEasingMode = EasingModeOptions[RadLoadOption.Text];
+                    SelectedEasingMode = EasingModeOptions[(string)RadLoadOption.Content];
                 }
                 catch
                 {
-                    await DisplayAlert("Error", "A non-existant load mode was selected", "Cancel");
+                    await DisplayAlert("Error", "A non-existent load mode was selected", "Cancel");
                 }
             }
             //Start the MainProgressBar animation and update the load count after it's done.
@@ -91,7 +89,7 @@ namespace Progress_Bar_Simulator
         }
         #endregion
 
-        #region "Event Handlers"
+        #region Event Handlers
         private async void BtnLoadMainProgressBar_Clicked(object sender, EventArgs e)
         {
             IsMainProgressBarActivated = !IsMainProgressBarActivated;

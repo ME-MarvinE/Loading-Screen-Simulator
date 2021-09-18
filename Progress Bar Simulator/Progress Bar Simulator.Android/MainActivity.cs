@@ -14,9 +14,6 @@ namespace Progress_Bar_Simulator.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            //Makes radiobuttons work
-            Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
-
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
