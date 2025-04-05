@@ -155,7 +155,7 @@ namespace LoadingScreenSimulator
                     PageBackgroundColor = Colors.White;
                 }
 
-                SetStatusBarColor(PrimaryColor, StatusBarStyle);
+                SetStatusBarColor(PageBackgroundColor, StatusBarStyle);
                 SetNavigationBarColor(IsLightTheme ? Color.FromArgb("#FBFBFB") : Color.FromArgb("#040404"), IsLightTheme ? NavigationBarStyle.DarkContent : NavigationBarStyle.LightContent);
             }
         }

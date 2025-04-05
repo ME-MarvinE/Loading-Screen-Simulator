@@ -22,7 +22,7 @@
                 FontSize="40"
                 HorizontalTextAlignment="Center"
                 Text="{Binding MainProgressBarLoadCount}"
-                TextColor="{DynamicResource PrimaryColor}"/>
+                TextColor="Gold"/>
 
             <ProgressBar
                 x:Name="MainProgressBar"
@@ -61,7 +61,6 @@
             </Button>
 
             <VerticalStackLayout Margin="0,20,0,0" Spacing="30">
-
                 <Border BackgroundColor="{DynamicResource SecondaryColor}" StrokeShape="RoundRectangle 5">
                     <VerticalStackLayout Padding="10">
 
@@ -110,7 +109,7 @@
                 </Border>
 
                 <Border BackgroundColor="{DynamicResource SecondaryColor}" StrokeShape="RoundRectangle 5">
-                    <VerticalStackLayout Padding="10">
+                    <VerticalStackLayout Padding="20">
                         <Label
                             FontAttributes="Bold"
                             FontSize="20"
@@ -118,7 +117,8 @@
                             Text="Animation"
                             TextColor="{DynamicResource SecondaryTextColor}"/>
                         <Button
-                            Margin="0,10,0,0"
+                            Margin="0,20,0,0"
+                            Padding="15"
                             BackgroundColor="{DynamicResource PrimaryColor}"
                             Command="{Binding ShowSelectAnimationDialogCommand}"
                             CommandParameter="{Binding MainProgressBarAnimationEasing}"

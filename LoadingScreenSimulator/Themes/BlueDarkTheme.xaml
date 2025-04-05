@@ -5,12 +5,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <Color x:Key="PrimaryColor">#0000E0</Color>
-    <Color x:Key="SecondaryColor">#242424</Color>
+    <Color x:Key="SecondaryColor">#404040</Color>
     <Color x:Key="TertiaryColor">#B0B0FF</Color>
-    <Color x:Key="SeparatorColor">#404040</Color>
-    <Color x:Key="OutlineColor">#707070</Color>
+    <Color x:Key="SeparatorColor">#606060</Color>
+    <Color x:Key="OutlineColor">#909090</Color>
 
-    <Color x:Key="PageBackgroundColor">#101010</Color>
+    <Color x:Key="PageBackgroundColor">#202020</Color>
     <Color x:Key="PageTextColor">White</Color>
 
     <Color x:Key="PrimaryTextColor">White</Color>
