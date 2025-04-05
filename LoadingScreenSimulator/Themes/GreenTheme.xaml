@@ -10,7 +10,7 @@
     <Color x:Key="SeparatorColor">#E0E0E0</Color>
     <Color x:Key="OutlineColor">#B0B0B0</Color>
 
-    <Color x:Key="PageBackgroundColor">#F0F0F4</Color>
+    <Color x:Key="PageBackgroundColor">#D0D0D4</Color>
     <Color x:Key="PageTextColor">Black</Color>
 
     <Color x:Key="PrimaryTextColor">White</Color>

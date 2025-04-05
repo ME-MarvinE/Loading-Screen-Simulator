@@ -7,7 +7,7 @@
     xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     x:Name="MainMainPage"
     x:DataType="{x:Type ViewModels:MainViewModel}"
-    BackgroundColor="#404042"
+    BackgroundColor="{DynamicResource PageBackgroundColor}"
     Shell.NavBarIsVisible="False">
 
     <Grid Padding="20">
@@ -21,13 +21,8 @@
                 FontAttributes="Bold"
                 FontSize="40"
                 HorizontalTextAlignment="Center"
-                TextColor="White">
-                <Label.FormattedText>
-                    <FormattedString>
-                        <Span Text="{Binding MainProgressBarLoadCount}" TextColor="Gold"/>
-                    </FormattedString>
-                </Label.FormattedText>
-            </Label>
+                Text="{Binding MainProgressBarLoadCount}"
+                TextColor="{DynamicResource PrimaryColor}"/>
 
             <ProgressBar
                 x:Name="MainProgressBar"
@@ -44,6 +39,7 @@
                 HorizontalOptions="Center"
                 IsEnabled="{Binding IsMainProgressBarActivated, Converter={mct:InvertedBoolConverter}}"
                 MinimumHeightRequest="50"
+                TextColor="White"
                 WidthRequest="150">
 
                 <Button.Style>
@@ -66,14 +62,15 @@
 
             <VerticalStackLayout Margin="0,20,0,0" Spacing="30">
 
-                <Border BackgroundColor="#707072" StrokeShape="RoundRectangle 5">
+                <Border BackgroundColor="{DynamicResource SecondaryColor}" StrokeShape="RoundRectangle 5">
                     <VerticalStackLayout Padding="10">
 
                         <Label
                             FontAttributes="Bold"
                             FontSize="20"
                             HorizontalTextAlignment="Center"
-                            Text="Colour"/>
+                            Text="Colour"
+                            TextColor="{DynamicResource SecondaryTextColor}"/>
 
                         <!--<Border
                 Grid.Column="1"
@@ -112,23 +109,27 @@
                     </VerticalStackLayout>
                 </Border>
 
-                <Border BackgroundColor="#707072" StrokeShape="RoundRectangle 5">
+                <Border BackgroundColor="{DynamicResource SecondaryColor}" StrokeShape="RoundRectangle 5">
                     <VerticalStackLayout Padding="10">
                         <Label
                             FontAttributes="Bold"
                             FontSize="20"
                             HorizontalTextAlignment="Center"
-                            Text="Animation"/>
+                            Text="Animation"
+                            TextColor="{DynamicResource SecondaryTextColor}"/>
                         <Label
                             Margin="0,10,0,0"
                             FontSize="16"
                             HorizontalTextAlignment="Center"
-                            Text="{Binding MainProgressBarAnimationEasingText}"/>
+                            Text="{Binding MainProgressBarAnimationEasingText}"
+                            TextColor="{DynamicResource PrimaryColor}"/>
                         <Button
                             Margin="0,20,0,0"
+                            BackgroundColor="{DynamicResource PrimaryColor}"
                             Command="{Binding ShowSelectAnimationDialogCommand}"
                             CommandParameter="{Binding MainProgressBarAnimationEasing}"
-                            Text="Change Animation"/>
+                            Text="Change Animation"
+                            TextColor="{DynamicResource PrimaryTextColor}"/>
                     </VerticalStackLayout>
                 </Border>
             </VerticalStackLayout>
