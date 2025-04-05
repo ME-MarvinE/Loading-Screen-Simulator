@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="LoadingScreenSimulator.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ViewModels="clr-namespace:LoadingScreenSimulator.ViewModels"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Name="MainMainPage"
+    x:DataType="{x:Type ViewModels:MainViewModel}"
+    BackgroundColor="#404042"
+    Shell.NavBarIsVisible="False">
+
+    <Grid Padding="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0" HorizontalOptions="Fill">
+            <Label
+                FontAttributes="Bold"
+                FontSize="40"
+                HorizontalTextAlignment="Center"
+                TextColor="White">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{Binding MainProgressBarLoadCount}" TextColor="Gold"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <ProgressBar
+                x:Name="MainProgressBar"
+                Margin="0,20,0,0"
+                Progress="{Binding MainProgressBarProgress, Mode=TwoWay}"
+                ProgressColor="{Binding MainProgressBarColor}"
+                ScaleX="0.75"
+                ScaleY="5"/>
+
+            <Button
+                Margin="0,20,0,0"
+                Command="{Binding StartProgressBarLoadCommand}"
+                CornerRadius="5"
+                HorizontalOptions="Center"
+                IsEnabled="{Binding IsMainProgressBarActivated, Converter={mct:InvertedBoolConverter}}"
+                MinimumHeightRequest="50"
+                WidthRequest="150">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Text" Value="Not Activated"/>
+                        <Setter Property="BackgroundColor" Value="#D43535"/>
+
+                        <Style.Triggers>
+                            <DataTrigger
+                                Binding="{Binding IsMainProgressBarActivated}"
+                                TargetType="{x:Type Button}"
+                                Value="True">
+                                <Setter Property="Text" Value="In Progress"/>
+                                <Setter Property="BackgroundColor" Value="#35D435"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+
+            <VerticalStackLayout Margin="0,20,0,0" Spacing="30">
+
+                <Border BackgroundColor="#707072" StrokeShape="RoundRectangle 5">
+                    <VerticalStackLayout Padding="10">
+
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Colour"/>
+
+                        <!--<Border
+                Grid.Column="1"
+                Margin="0,0,5,0"
+                Background="{Binding MainProgressBarColor}"
+                StrokeShape="RoundRectangle 10"
+                VerticalOptions="Center">
+
+                <Border.Behaviors>
+                    <mct:TouchBehavior
+                        BindingContext="{Binding BindingContext, Source={x:Reference MainMainPage}}"
+                        Command="{Binding ShowMainProgressBarColorDialogCommand}"
+                        CommandParameter="{Binding MainProgressBarColor}"/>
+                </Border.Behaviors>
+
+                <BoxView HeightRequest="45" WidthRequest="45"/>
+            </Border>-->
+
+                        <VerticalStackLayout Spacing="10">
+                            <Slider
+                                MaximumTrackColor="#C00000"
+                                MinimumTrackColor="Red"
+                                ThumbColor="Red"
+                                Value="{Binding MainProgressBarColorRed}"/>
+                            <Slider
+                                MaximumTrackColor="#00C000"
+                                MinimumTrackColor="ForestGreen"
+                                ThumbColor="ForestGreen"
+                                Value="{Binding MainProgressBarColorGreen}"/>
+                            <Slider
+                                MaximumTrackColor="#0000C0"
+                                MinimumTrackColor="Blue"
+                                ThumbColor="Blue"
+                                Value="{Binding MainProgressBarColorBlue}"/>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <Border BackgroundColor="#707072" StrokeShape="RoundRectangle 5">
+                    <VerticalStackLayout Padding="10">
+                        <Label
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            HorizontalTextAlignment="Center"
+                            Text="Animation"/>
+                        <Label
+                            Margin="0,10,0,0"
+                            FontSize="16"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding MainProgressBarAnimationEasingText}"/>
+                        <Button
+                            Margin="0,20,0,0"
+                            Command="{Binding ShowSelectAnimationDialogCommand}"
+                            CommandParameter="{Binding MainProgressBarAnimationEasing}"
+                            Text="Change Animation"/>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </Grid>
+
+</ContentPage>

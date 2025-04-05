@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup
+    x:Class="LoadingScreenSimulator.Popups.SelectItemDialogPopup"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Popups="clr-namespace:LoadingScreenSimulator.Popups"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Name="MainSelectItemDialogPopup"
+    x:DataType="{x:Type Popups:SelectItemDialogPopup}"
+    Size="300, 350">
+
+    <Grid BackgroundColor="{DynamicResource SecondaryColor}">
+        <Grid.Resources>
+            <Style TargetType="{x:Type Label}">
+                <Setter Property="TextColor" Value="{DynamicResource SecondaryTextColor}"/>
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <CollectionView
+            Grid.Row="0"
+            ItemsSource="{Binding ItemsSource, Source={x:Reference MainSelectItemDialogPopup}}"
+            SelectedItem="{Binding ReturnValue, Source={x:Reference MainSelectItemDialogPopup}}"
+            SelectionMode="Single"
+            VerticalScrollBarVisibility="Always">
+
+            <CollectionView.EmptyView>
+                <Label
+                    HorizontalTextAlignment="Center"
+                    Text="Empty"
+                    TextColor="{DynamicResource PageTextColor}"
+                    VerticalTextAlignment="Center"/>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="1"/>
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Null}">
+                    <Label
+                        FontSize="16"
+                        HeightRequest="50"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding .}"
+                        VerticalTextAlignment="Center">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="Common">
+                                <VisualState Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="Transparent"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="#E0E0E4"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Label>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+        <Grid Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <ContentView
+                Grid.Column="0"
+                Padding="10"
+                BackgroundColor="{DynamicResource PrimaryColor}">
+
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CancelDialogCommand, Source={x:Reference MainSelectItemDialogPopup}}"/>
+                </ContentView.GestureRecognizers>
+
+                <Label
+                    FontSize="18"
+                    Text="Cancel"
+                    TextColor="{DynamicResource PrimaryTextColor}"
+                    VerticalTextAlignment="Center"/>
+            </ContentView>
+
+            <ContentView
+                Grid.Column="1"
+                Padding="10"
+                BackgroundColor="{DynamicResource PrimaryColor}">
+
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ResetReturnValueCommand, Source={x:Reference MainSelectItemDialogPopup}}"/>
+                </ContentView.GestureRecognizers>
+
+                <Label
+                    FontSize="18"
+                    Text="Reset"
+                    TextColor="{DynamicResource PrimaryTextColor}"
+                    VerticalTextAlignment="Center"/>
+            </ContentView>
+
+            <ContentView
+                Grid.Column="2"
+                Padding="10"
+                BackgroundColor="{DynamicResource PrimaryColor}"
+                HorizontalOptions="Fill">
+
+                <ContentView.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding CloseDialogCommand, Source={x:Reference MainSelectItemDialogPopup}}"/>
+                </ContentView.GestureRecognizers>
+
+                <Label
+                    FontSize="18"
+                    HorizontalTextAlignment="End"
+                    Text="Confirm"
+                    TextColor="{DynamicResource PrimaryTextColor}"
+                    VerticalTextAlignment="Center"/>
+            </ContentView>
+        </Grid>
+
+    </Grid>
+
+</mct:Popup>
