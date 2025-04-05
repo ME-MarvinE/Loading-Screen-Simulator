@@ -165,7 +165,7 @@ namespace LoadingScreenSimulator
             {
                 SetAppTheme(AppTheme.Blue);
             }
-            else if (RequestedTheme == Microsoft.Maui.ApplicationModel.AppTheme.Light)
+            else if (RequestedTheme == Microsoft.Maui.ApplicationModel.AppTheme.Dark)
             {
                 SetAppTheme(AppTheme.BlueDark);
             }
