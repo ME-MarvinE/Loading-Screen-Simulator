@@ -117,18 +117,12 @@
                             HorizontalTextAlignment="Center"
                             Text="Animation"
                             TextColor="{DynamicResource SecondaryTextColor}"/>
-                        <Label
-                            Margin="0,10,0,0"
-                            FontSize="16"
-                            HorizontalTextAlignment="Center"
-                            Text="{Binding MainProgressBarAnimationEasingText}"
-                            TextColor="{DynamicResource PrimaryColor}"/>
                         <Button
-                            Margin="0,20,0,0"
+                            Margin="0,10,0,0"
                             BackgroundColor="{DynamicResource PrimaryColor}"
                             Command="{Binding ShowSelectAnimationDialogCommand}"
                             CommandParameter="{Binding MainProgressBarAnimationEasing}"
-                            Text="Change Animation"
+                            Text="{Binding MainProgressBarAnimationEasingText}"
                             TextColor="{DynamicResource PrimaryTextColor}"/>
                     </VerticalStackLayout>
                 </Border>
