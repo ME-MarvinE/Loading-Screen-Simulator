@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.meapps.loadingscreensimulator" android:versionCode="3" android:versionName="1.02" android:installLocation="auto">
-	<application android:allowBackup="true" android:supportsRtl="true" android:label="Loading Screen Simulator" android:theme="@style/MainTheme"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.meapps.loadingscreensimulator" android:versionCode="3" android:versionName="1.02">
+	<application android:allowBackup="true" android:supportsRtl="true" android:label="Loading Screen Simulator" android:icon="@mipmap/appicon"></application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>

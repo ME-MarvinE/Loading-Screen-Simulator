@@ -48,16 +48,16 @@ namespace LoadingScreenSimulator
         {
             NavigationBarColor = Color;
 
-            //if (NavigationBarStyle != null)
-            //{
-            //    App.NavigationBarStyle = NavigationBarStyle.Value;
-            //}
+            if (NavigationBarStyle != null)
+            {
+                App.NavigationBarStyle = NavigationBarStyle.Value;
+            }
 
-            //if (Current?.MainPage != null)
-            //{
-            //    NavigationBar.SetColor(Current.MainPage, NavigationBarColor);
-            //    NavigationBar.SetStyle(Current.MainPage, App.NavigationBarStyle);
-            //}
+            if (Current?.MainPage != null)
+            {
+                NavigationBar.SetColor(Current.MainPage, NavigationBarColor);
+                NavigationBar.SetStyle(Current.MainPage, App.NavigationBarStyle);
+            }
         }
         public static async Task OpenUrl(string Url)
         {
