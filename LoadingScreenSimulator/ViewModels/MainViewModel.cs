@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using LoadingScreenSimulator.Helpers;
+﻿using LoadingScreenSimulator.Helpers;
 using PropertyChanged;
 using System.Windows.Input;
 
