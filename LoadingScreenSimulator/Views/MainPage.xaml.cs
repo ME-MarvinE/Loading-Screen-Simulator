@@ -1,5 +1,4 @@
-﻿using AndroidX.Lifecycle;
-using LoadingScreenSimulator.ViewModels;
+﻿using LoadingScreenSimulator.ViewModels;
 
 namespace LoadingScreenSimulator.Views
 {
@@ -26,6 +25,7 @@ namespace LoadingScreenSimulator.Views
             ViewModel.MainProgressBarProgress = 0;
             ViewModel.MainProgressBarLoadCount += 1;
             ViewModel.IsMainProgressBarActivated = false;
+            Preferences.Set(MainViewModel.SCORE_KEY, ViewModel.MainProgressBarLoadCount);
         }
         private async void ViewModel_MainProgressBarLoadStarted(object? sender, EventArgs e)
         {

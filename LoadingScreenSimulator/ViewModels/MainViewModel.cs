@@ -7,6 +7,11 @@ namespace LoadingScreenSimulator.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
+
+        #region Fields
+        public const string SCORE_KEY = "Score";
+        #endregion
+
         #region Properties
         [OnChangedMethod(nameof(OnMainProgressBarColorChanged))]
         public Color MainProgressBarColor { get; set; }
@@ -47,6 +52,7 @@ namespace LoadingScreenSimulator.ViewModels
 
             MainProgressBarAnimationEasing = Easing.CubicInOut;
             MainProgressBarColor = Color.FromArgb("#FFFA5252");
+            MainProgressBarLoadCount = Preferences.Get(SCORE_KEY, 0);
         }
         #endregion
 
